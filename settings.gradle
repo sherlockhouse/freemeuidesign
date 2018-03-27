@@ -1,1 +1,1 @@
-include ':app', ':freemeuidesign'
+include ':app', ':freemegallerywidget'

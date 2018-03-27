@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- tab colors-->
+    <color name="freeme_color_accent">@color/accent_freeme_light</color>
+    <color name="freeme_color_accent_disable">#6622C580</color>
+    <color name="freeme_color_primary">@color/primary_freeme_light</color>
+    <color name="tab_ripple_color">#ffffff</color>
+    <color name="tab_accent_color">@color/tab_ripple_color</color>
+    <color name="tab_selected_underline_color">#f50057</color>
+    <color name="tab_unread_count_background_color">#1C3AA9</color>
+
+    <!-- Color of action bar text. -->
+    <color name="actionbar_text_color">#ffffff</color>
+    <color name="actionbar_unselected_text_color">#a6ffffff</color>
+
+    <!--freeme theme colors-->
+    <color name="accent_freeme_dark">#22c580</color>
+    <color name="accent_freeme_light">#22c580</color>
+    <color name="primary_freeme_dark">@color/freeme_grey_900</color>
+    <color name="primary_freeme_light">@color/freeme_grey_50</color>
+    <color name="primary_dark_freeme_dark">@color/freeme_grey_900</color>
+    <color name="primary_dark_freeme_light">@color/freeme_grey_50</color>
+    <color name="primary_dark_freeme_light_light_status_bar">@color/freeme_grey_300</color>
+
+    <!-- Primary & accent colors -->
+    <eat-comment />
+    <color name="freeme_grey_900">#ff212121</color>
+    <color name="freeme_grey_850">#ff303030</color>
+    <color name="freeme_grey_800">#ff424242</color>
+    <color name="freeme_grey_600">#ff757575</color>
+    <color name="freeme_grey_300">#ffe0e0e0</color>
+    <color name="freeme_grey_100">#fff5f5f5</color>
+    <color name="freeme_grey_50">#fff0f0f0</color>
+
+    <color name="freeme_deep_teal_100">#ffb2dfdb</color>
+    <color name="freeme_deep_teal_200">#ff80cbc4</color>
+    <color name="freeme_deep_teal_300">#ff4db6ac</color>
+    <color name="freeme_deep_teal_500">#ff009688</color>
+
+    <color name="freeme_blue_grey_800">#ff37474f</color>
+    <color name="freeme_blue_grey_900">#ff263238</color>
+    <color name="freeme_blue_grey_950">#ff21272b</color>
+</resources>

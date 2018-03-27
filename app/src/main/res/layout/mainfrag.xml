@@ -3,7 +3,16 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical">
-
+	<com.freeme.scott.galleryui.design.ViewPagerTabs
+		android:id="@+id/lists_pager_header"
+		style="@style/DialtactsActionBarTabTextStyle"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/tab_height"
+		android:layout_gravity="top"
+		android:elevation="1dp"
+		android:orientation="horizontal"
+		android:textAllCaps="true"
+		android:textColor="@color/freeme_dialer_tab_text_color" />
 	<Button
 		android:id="@+id/showOther"
 		android:layout_width="match_parent"
