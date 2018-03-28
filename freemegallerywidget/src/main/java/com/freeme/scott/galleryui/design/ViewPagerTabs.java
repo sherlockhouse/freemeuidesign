@@ -18,9 +18,12 @@ package com.freeme.scott.galleryui.design;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.Outline;
 //import android.view.PagerAdapter;
 //import android.support.v4.view.ViewPager;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -33,8 +36,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.internal.widget.PagerAdapter;
-import com.android.internal.widget.ViewPager;
 
 /**
  * Lightweight implementation of ViewPager tabs. This looks similar to traditional actionBar tabs,
@@ -54,12 +55,13 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
   private static final int TAB_SIDE_PADDING_IN_DPS = 10;
   // TODO: This should use <declare-styleable> in the future
   private static final int[] ATTRS =
-      new int[] {
-        android.R.attr.textSize,
-        android.R.attr.textStyle,
-        android.R.attr.textColor,
-        android.R.attr.textAllCaps
-      };
+          new int[]{
+                  android.R.attr.textSize,
+                  android.R.attr.textStyle,
+                  android.R.attr.textColor,
+                  android.R.attr.textAllCaps,
+                  android.R.attr.background
+          };
 
   /**
    * Linearlayout that will contain the TextViews serving as tabs. This is the only child of the
@@ -70,6 +72,7 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
   final ColorStateList mTextColor;
   final int mTextSize;
   final boolean mTextAllCaps;
+  private final int mBackgroudColor;
   ViewPager mPager;
   int mPrevSelected = -1;
   int mSidePadding;
@@ -97,6 +100,7 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
     mTextStyle = a.getInt(1, 0);
     mTextColor = a.getColorStateList(2);
     mTextAllCaps = a.getBoolean(3, false);
+    mBackgroudColor = a.getInt(4, 0);
 
     mTabStrip = new ViewPagerTabStrip(context);
     addView(
@@ -139,7 +143,7 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
     }
   }
 
-  private void addTab(CharSequence tabTitle, final int position) {
+  public void addTab(CharSequence tabTitle, final int position) {
     View tabView;
     if (mTabIcons != null && position < mTabIcons.length) {
       View layout = LayoutInflater.from(getContext()).inflate(R.layout.unread_count_tab, null);
@@ -176,8 +180,12 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
       if (mTextSize > 0) {
         textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
       }
-      if (mTextColor != null) {
+
+       textView.setBackgroundColor(mBackgroudColor);
+
+        if (mTextColor != null) {
         textView.setTextColor(mTextColor);
+
       }
       textView.setAllCaps(mTextAllCaps);
       textView.setGravity(Gravity.CENTER);
@@ -265,6 +273,7 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
     }
     final View selectedChild = mTabStrip.getChildAt(position);
     selectedChild.setSelected(true);
+    mTabStrip.selectedInvalidate(position);
 
     // Update scroll position
     final int scrollPos = selectedChild.getLeft() - (getWidth() - selectedChild.getWidth()) / 2;

@@ -66,6 +66,12 @@ public class ViewPagerTabStrip extends LinearLayout {
     invalidate();
   }
 
+  void selectedInvalidate(int position) {
+    mIndexForSelection = position;
+    invalidate();
+  }
+
+
   @Override
   protected void onDraw(Canvas canvas) {
     int childCount = getChildCount();
