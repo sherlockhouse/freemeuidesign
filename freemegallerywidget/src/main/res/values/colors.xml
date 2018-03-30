@@ -45,4 +45,7 @@
     <color name="freeme_blue_grey_900">#ff263238</color>
     <color name="freeme_blue_grey_950">#ff21272b</color>
 
+    <color name="freeme_bottom_menu_container_divider_color">#2E000000</color>
+    <color name="freeme_bottom_menu_container_bg_color">#FFF0F0F0</color>
+
 </resources>

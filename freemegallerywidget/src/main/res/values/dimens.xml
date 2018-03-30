@@ -21,4 +21,8 @@
     <dimen name="actionbar_and_tab_height">107dp</dimen>
     <dimen name="actionbar_contentInsetStart">72dp</dimen>
 
+    <!-- actionbar menu view -->
+    <dimen name="action_bar_menu_view_padding">4dp</dimen>
+    <dimen name="action_bar_menu_view_marginend">14dp</dimen>
+
 </resources>

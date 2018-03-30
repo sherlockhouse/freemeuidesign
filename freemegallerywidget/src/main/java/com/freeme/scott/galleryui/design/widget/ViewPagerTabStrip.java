@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License
  */
-package com.freeme.scott.galleryui.design;
+package com.freeme.scott.galleryui.design.widget;
 
 
 import android.content.Context;
@@ -23,6 +23,8 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import com.freeme.scott.galleryui.design.R;
 
 public class ViewPagerTabStrip extends LinearLayout {
 

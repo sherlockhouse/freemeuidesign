@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.freeme.scott.galleryui.design;
+package com.freeme.scott.galleryui.design.widget;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.graphics.Outline;
 //import android.view.PagerAdapter;
 //import android.support.v4.view.ViewPager;
@@ -35,6 +34,8 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.freeme.scott.galleryui.design.R;
 
 
 /**

@@ -6,12 +6,12 @@
         <item name="android:textColor">@color/tab_text_color</item>
         <item name="android:textSize">@dimen/tab_text_size</item>
         <item name="android:fontFamily">"sans-serif-medium"</item>
-        <item name="android:background">@android:color/holo_red_light</item>
     </style>
     
     <style name="AppTheme" parent="@android:style/Theme.Material.Light">
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:colorAccent">@color/accent_freeme_light</item>
     </style>
 
 </resources>

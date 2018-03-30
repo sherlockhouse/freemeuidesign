@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme.Freeme 8.1 - actionBar/actionMode -->
+    <dimen name="actionbar_title_size_freeme">18dip</dimen>
+    <dimen name="actionbar_title_padding_freeme">14dip</dimen>
+    <dimen name="actionbar_title_padding_left_freeme">18dip</dimen>
+    <dimen name="actionbar_title_max_width_freeme">176dip</dimen>
+    <dimen name="actionbar_subtitle_size_freeme">12dip</dimen>
+    <dimen name="actionbar_subtitle_margin_bottom_freeme">7dip</dimen>
+    <dimen name="actionbar_menuview_size_freeme">15dip</dimen>
+    <dimen name="actionbar_menuitemview_item_spacing_freeme">14dip</dimen>
+    <dimen name="actionbar_menuview_padding_freeme">14dip</dimen>
+    <dimen name="actionbar_menuview_padding_vertical_freeme">0dip</dimen>
+    <dimen name="actionbar_menuview_padding_horizontal_freeme">2dip</dimen>
+    <dimen name="actionbar_menu_max_width_freeme">78dip</dimen>
+    <dimen name="actionbar_doubleline_height_freeme">54dip</dimen>
+    <dimen name="actionbar_stacked_tab_bar_height_freeme">40dip</dimen>
+    <dimen name="actionbar_progressbar_margin_right_freeme">18dip</dimen>
+    <dimen name="actionbar_hint_text_padding_freeme">76dip</dimen>
+    <dimen name="actionbar_hint_text_margin_top_freeme">4dip</dimen>
+    <dimen name="actionbar_tab_scrollview_max_width_freeme">291dip</dimen>
+    <dimen name="actionbar_tab_background_height_freeme">50dip</dimen>
+    <dimen name="actionbar_tab_different_size_freeme">0dip</dimen>
+    <dimen name="actionbar_tab_icon_item_marginTop_freeme">4dip</dimen>
+    <dimen name="actionbar_tab_text_item_marginTop_freeme">-2dip</dimen>
+    <dimen name="actionbar_tab_double_lines_different_size_freeme">0dip</dimen>
+    <dimen name="actionbar_tab_double_lines_text_item_marginTop_freeme">2dip</dimen>
+    <!-- Vertical padding around action bar icons. -->
+    <dimen name="action_bar_icon_vertical_padding_freeme">9dp</dimen>
+
+    <dimen name="freeme_bottom_menu_container_height">48dp</dimen>
+
+</resources>

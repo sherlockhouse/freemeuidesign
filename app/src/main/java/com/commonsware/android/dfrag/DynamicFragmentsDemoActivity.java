@@ -19,16 +19,18 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
-import com.freeme.scott.galleryui.design.GalleryPageAdapter;
-import com.freeme.scott.galleryui.design.GalleryViewPager;
-import com.freeme.scott.galleryui.design.ViewPagerTabs;
+import com.freeme.scott.galleryui.design.adapter.GalleryPageAdapter;
+import com.freeme.scott.galleryui.design.widget.FreemeBottomSelectedController;
+import com.freeme.scott.galleryui.design.widget.FreemeBottomSelectedView;
+import com.freeme.scott.galleryui.design.widget.GalleryViewPager;
+import com.freeme.scott.galleryui.design.widget.ViewPagerTabs;
 
 import java.util.ArrayList;
 
-import static com.freeme.scott.galleryui.design.GalleryPageAdapter.TAB_COUNT_DEFAULT;
-import static com.freeme.scott.galleryui.design.GalleryPageAdapter.TAB_INDEX_ALL_CONTACTS;
-import static com.freeme.scott.galleryui.design.GalleryPageAdapter.TAB_INDEX_HISTORY;
-import static com.freeme.scott.galleryui.design.GalleryPageAdapter.TAB_INDEX_SPEED_DIAL;
+import static com.freeme.scott.galleryui.design.adapter.GalleryPageAdapter.TAB_COUNT_DEFAULT;
+import static com.freeme.scott.galleryui.design.adapter.GalleryPageAdapter.TAB_INDEX_ALL_CONTACTS;
+import static com.freeme.scott.galleryui.design.adapter.GalleryPageAdapter.TAB_INDEX_HISTORY;
+import static com.freeme.scott.galleryui.design.adapter.GalleryPageAdapter.TAB_INDEX_SPEED_DIAL;
 
 public class DynamicFragmentsDemoActivity extends
         LifecycleLoggingActivity implements ViewPager.OnPageChangeListener {
@@ -38,24 +40,57 @@ public class DynamicFragmentsDemoActivity extends
     private ViewPagerTabs mViewPagerTabs;
     private GalleryPageAdapter mAdapter;
     private final ArrayList<ViewPager.OnPageChangeListener> mOnPageChangeListeners = new ArrayList<>();
+    private static final int TAP_TEST = 0;
+    private static final int BAR_TEST = 1;
+    private static final int ACTIONMODE_TEST = 2;
+    private FreemeBottomSelectedController mBottomSelectedController;
+
+    private static final int ACTION_CODE_SHARE = 0x100;
+    private static final int ACTION_CODE_DELETE = 0x200;
+    private static final int[] mActionNames = new int[]{R.string.test,R.string.test};
+    private static final int[] mActionCodes = new int[]{ACTION_CODE_SHARE, ACTION_CODE_DELETE};
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        String[] tabTitles = new String[TAB_COUNT_DEFAULT];
-        tabTitles[TAB_INDEX_SPEED_DIAL] = "test1";
-        tabTitles[TAB_INDEX_HISTORY] = "test2";
-        tabTitles[TAB_INDEX_ALL_CONTACTS] = "test3";
-        mViewPager = findViewById(R.id.lists_pager);
-        mAdapter = new GalleryPageAdapter(tabTitles);
-        mViewPager.setAdapter(mAdapter);
-        mViewPager.addOnPageChangeListener(this);
-        mViewPagerTabs = findViewById(R.id.lists_pager_header);
+        int test = ACTIONMODE_TEST;
+        switch(test) {
+            case TAP_TEST:
+                setContentView(R.layout.main);
+                String[] tabTitles = new String[TAB_COUNT_DEFAULT];
+                tabTitles[TAB_INDEX_SPEED_DIAL] = "test1";
+                tabTitles[TAB_INDEX_HISTORY] = "test2";
+                tabTitles[TAB_INDEX_ALL_CONTACTS] = "test3";
+                mViewPager = findViewById(R.id.lists_pager);
+                mAdapter = new GalleryPageAdapter(tabTitles);
+                mViewPager.setAdapter(mAdapter);
+                mViewPager.addOnPageChangeListener(this);
+                mViewPagerTabs = findViewById(R.id.lists_pager_header);
         /*
         mViewPagerTabs.configureTabIcons(tabIcons);
         */
-        mViewPagerTabs.setViewPager(mViewPager);
-        addOnPageChangeListener(mViewPagerTabs);
+                mViewPagerTabs.setViewPager(mViewPager);
+                addOnPageChangeListener(mViewPagerTabs);
+                break;
+            case BAR_TEST:
+                setContentView(R.layout.bartest);
+                break;
+            case ACTIONMODE_TEST:
+                setContentView(R.layout.actionmenu);
+                FreemeBottomSelectedView bottomContainer = findViewById(R.id.bottom_container);
+                mBottomSelectedController = new FreemeBottomSelectedController(bottomContainer);
+                FreemeBottomSelectedController controller = new FreemeBottomSelectedController(bottomContainer);
+                if (true) {
+                    controller.showActions(mActionNames, mActionCodes, mCallBack);
+                } else {
+                    controller.hideActions();
+                }
+                break;
+            default:
+                break;
+        }
+
     }
 
     public void addOnPageChangeListener(ViewPager.OnPageChangeListener onPageChangeListener) {
@@ -91,4 +126,18 @@ public class DynamicFragmentsDemoActivity extends
             mOnPageChangeListeners.get(i).onPageScrollStateChanged(state);
         }
     }
+
+    private FreemeBottomSelectedView.IFreemeBottomActionCallBack mCallBack
+            = new  FreemeBottomSelectedView.IFreemeBottomActionCallBack(){
+        @Override
+        public void onAction(int actionCode) {
+            switch (actionCode) {
+                case ACTION_CODE_DELETE:
+
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 }

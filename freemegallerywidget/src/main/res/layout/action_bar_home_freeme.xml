@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/freeme_home_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="9dip"
+    android:layout_gravity="center_vertical|start">
+    <ImageView android:id="@+id/up"
+        android:layout_gravity="center_vertical|start"
+        android:visibility="visible"
+        android:src="@drawable/ic_ab_back_freeme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="-3dip"
+        android:minWidth="24dip"
+        android:scaleType="centerInside" />
+    <ImageView android:id="@+id/home"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dip"
+        android:layout_marginTop="@dimen/action_bar_icon_vertical_padding_freeme"
+        android:layout_marginBottom="@dimen/action_bar_icon_vertical_padding_freeme"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter" />
+    <TextView
+        android:id="@+id/freeme_actionbar_back_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?android:colorAccent"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="@android:string/cancel"
+        android:textSize="@dimen/actionbar_menuview_size_freeme"
+        android:layout_gravity="center_vertical|start"
+        />
+</LinearLayout>

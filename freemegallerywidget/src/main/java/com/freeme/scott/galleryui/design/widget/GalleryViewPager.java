@@ -1,4 +1,4 @@
-package com.freeme.scott.galleryui.design;
+package com.freeme.scott.galleryui.design.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -1,4 +1,4 @@
-package com.freeme.scott.galleryui.design;
+package com.freeme.scott.galleryui.design.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
