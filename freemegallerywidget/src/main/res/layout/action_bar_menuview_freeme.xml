@@ -5,6 +5,7 @@
     android:layout_marginEnd="@dimen/actionbar_menuitemview_item_spacing_freeme">
 
     <TextView
+        android:id="@+id/freeme_actionbar_menuview_text1"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:textColor="?android:colorAccent"
@@ -12,7 +13,6 @@
         android:singleLine="true"
         android:paddingStart="@dimen/action_bar_menu_view_padding"
         android:paddingEnd="@dimen/action_bar_menu_view_padding"
-        android:text="@android:string/selectAll"
         android:textSize="@dimen/actionbar_menuview_size_freeme"
         android:layout_gravity="center_vertical|start"
         />

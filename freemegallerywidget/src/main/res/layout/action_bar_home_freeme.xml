@@ -30,8 +30,6 @@
         android:textColor="?android:colorAccent"
         android:ellipsize="end"
         android:singleLine="true"
-        android:text="@android:string/cancel"
         android:textSize="@dimen/actionbar_menuview_size_freeme"
-        android:layout_gravity="center_vertical|start"
-        />
+        android:layout_gravity="center_vertical|start" />
 </LinearLayout>

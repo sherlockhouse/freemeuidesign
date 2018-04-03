@@ -18,6 +18,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.TextView;
 
 import com.freeme.scott.galleryui.design.adapter.GalleryPageAdapter;
 import com.freeme.scott.galleryui.design.widget.FreemeBottomSelectedController;
@@ -54,7 +55,7 @@ public class DynamicFragmentsDemoActivity extends
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int test = ACTIONMODE_TEST;
+        int test = BAR_TEST;
         switch(test) {
             case TAP_TEST:
                 setContentView(R.layout.main);
@@ -75,6 +76,10 @@ public class DynamicFragmentsDemoActivity extends
                 break;
             case BAR_TEST:
                 setContentView(R.layout.bartest);
+                TextView t = findViewById(R.id.freeme_actionbar_back_title);
+                t.setText(android.R.string.cancel);
+                TextView t2 = findViewById(R.id.freeme_actionbar_menuview_text1);
+                t2.setText(android.R.string.selectAll);
                 break;
             case ACTIONMODE_TEST:
                 setContentView(R.layout.actionmenu);

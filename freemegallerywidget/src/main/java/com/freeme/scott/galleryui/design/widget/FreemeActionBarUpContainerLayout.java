@@ -26,7 +26,11 @@ public class FreemeActionBarUpContainerLayout extends LinearLayout {
 
 //        if (FreemeContextUtil.isFreemeStyle(getContext())) {
             findChildViews();
+            MarginLayoutParams lp = (MarginLayoutParams) getLayoutParams();
+            t = t - lp.topMargin + lp.bottomMargin;
+            b = b - lp.topMargin + lp.bottomMargin;
             layoutAlignLeft(mChildHome, l, t, r, b);
+
             if (mChildTitle != null) {
                 if (isLayoutRtl()) {
                     final int homeleft = (mChildHome == null || mChildHome.getVisibility() != View.VISIBLE) ?
@@ -71,7 +75,7 @@ public class FreemeActionBarUpContainerLayout extends LinearLayout {
             final int height = child.getMeasuredHeight();
             final MarginLayoutParams lp = (LinearLayout.LayoutParams) child.getLayoutParams();
             final int left = isLayoutRtl() ? r - width - lp.leftMargin : l + lp.leftMargin;
-            final int top = t + ((b - height) / 2);
+            final int top = t + ((b - height) / 2) ;
             child.layout(left, top, left + width, top + height);
         }
     }
