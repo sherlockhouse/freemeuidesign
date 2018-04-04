@@ -26,7 +26,7 @@ import com.freeme.scott.galleryui.design.utils.Utils;
  * @see FrameLayout
  * @since 19 Mar 2016
  */
-class BottomNavigationTab extends FrameLayout {
+public class BottomNavigationTab extends FrameLayout {
 
 
     protected int paddingTopActive;
@@ -44,7 +44,7 @@ class BottomNavigationTab extends FrameLayout {
     protected boolean isInActiveIconSet = false;
     protected String mLabel;
 
-    protected BadgeItem badgeItem;
+    public BadgeItem badgeItem;
     protected ShapeBadgeItem shapeBadgeItem;
 
     boolean isActive = false;

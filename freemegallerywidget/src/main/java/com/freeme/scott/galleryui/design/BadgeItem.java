@@ -304,7 +304,7 @@ public class BadgeItem {
     private void refreshDrawable() {
         if (isWeakReferenceValid()) {
             TextView textView = mTextViewRef.get();
-            textView.setBackgroundDrawable(BottomNavigationHelper.getBadgeDrawable(this, textView.getContext()));
+            textView.setBackground(BottomNavigationHelper.getBadgeDrawable(this, textView.getContext()));
         }
     }
 

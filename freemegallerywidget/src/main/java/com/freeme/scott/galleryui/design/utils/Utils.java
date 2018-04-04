@@ -1,13 +1,10 @@
 package com.freeme.scott.galleryui.design.utils;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Point;
 import android.util.TypedValue;
-import android.view.Display;
 import android.view.WindowManager;
-import java.lang.reflect.Field;
 
 public class Utils
 {

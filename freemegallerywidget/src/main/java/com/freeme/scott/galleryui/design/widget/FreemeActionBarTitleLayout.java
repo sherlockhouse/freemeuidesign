@@ -7,7 +7,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.freeme.scott.galleryui.design.R;
-import com.freeme.util.FreemeContextUtil;
 
 public class FreemeActionBarTitleLayout extends LinearLayout {
     public FreemeActionBarTitleLayout(Context context) {

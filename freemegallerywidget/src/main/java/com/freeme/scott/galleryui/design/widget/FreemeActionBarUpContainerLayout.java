@@ -32,7 +32,7 @@ public class FreemeActionBarUpContainerLayout extends LinearLayout {
             layoutAlignLeft(mChildHome, l, t, r, b);
 
             if (mChildTitle != null) {
-                if (isLayoutRtl()) {
+                if (this.isLayoutRtl(this)) {
                     final int homeleft = (mChildHome == null || mChildHome.getVisibility() != View.VISIBLE) ?
                             r : mChildHome.getLeft();
                     if (homeleft > l + ((mChildTitle.getMeasuredWidth() + r) / 2)) {
@@ -74,7 +74,7 @@ public class FreemeActionBarUpContainerLayout extends LinearLayout {
             final int width = child.getMeasuredWidth();
             final int height = child.getMeasuredHeight();
             final MarginLayoutParams lp = (LinearLayout.LayoutParams) child.getLayoutParams();
-            final int left = isLayoutRtl() ? r - width - lp.leftMargin : l + lp.leftMargin;
+            final int left = isLayoutRtl(this) ? r - width - lp.leftMargin : l + lp.leftMargin;
             final int top = t + ((b - height) / 2) ;
             child.layout(left, top, left + width, top + height);
         }
@@ -101,10 +101,26 @@ public class FreemeActionBarUpContainerLayout extends LinearLayout {
             final int width = child.getMeasuredWidth();
             final int height = child.getMeasuredHeight();
             final MarginLayoutParams lp = (LinearLayout.LayoutParams) child.getLayoutParams();
-            final int right = isLayoutRtl() ? l + lp.rightMargin + width: r - lp.rightMargin;
+            final int right = isLayoutRtl(this) ? l + lp.rightMargin + width: r - lp.rightMargin;
             final int top = t + ((b - height) / 2);
             child.layout(right - width, top, right, top + height);
         }
     }
 
+    /**
+     * Check to see if the current layout is Right-to-Left. This check is only
+     * supported for API 17+. For earlier versions, this method will just return
+     * false.
+     *
+     * NOTE: This is based on the private API method in {@link View} class.
+     *
+     * @return boolean Boolean indicating whether the currently locale is RTL.
+     */
+    public boolean isLayoutRtl(View view) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            return View.LAYOUT_DIRECTION_RTL == view.getLayoutDirection();
+        } else {
+            return false;
+        }
+    }
 }

@@ -55,13 +55,13 @@ public class DynamicFragmentsDemoActivity extends
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int test = BAR_TEST;
+        int test = TAP_TEST;
         switch(test) {
             case TAP_TEST:
                 setContentView(R.layout.main);
                 String[] tabTitles = new String[TAB_COUNT_DEFAULT];
-                tabTitles[TAB_INDEX_SPEED_DIAL] = "test1";
-                tabTitles[TAB_INDEX_HISTORY] = "test2";
+                tabTitles[TAB_INDEX_SPEED_DIAL] = "相册";
+                tabTitles[TAB_INDEX_HISTORY] = "联系人";
                 tabTitles[TAB_INDEX_ALL_CONTACTS] = "test3";
                 mViewPager = findViewById(R.id.lists_pager);
                 mAdapter = new GalleryPageAdapter(tabTitles);

@@ -1,18 +1,10 @@
 package com.freeme.scott.galleryui.design;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.os.Build;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewAnimationUtils;
-import android.widget.FrameLayout;
-
-import com.freeme.scott.galleryui.design.utils.Utils;
 
 /**
  * Class description : This is utils class specific for this library, most the common code goes here.

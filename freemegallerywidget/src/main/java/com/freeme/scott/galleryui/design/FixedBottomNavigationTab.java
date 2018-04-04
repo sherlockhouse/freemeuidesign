@@ -23,6 +23,7 @@ class FixedBottomNavigationTab extends BottomNavigationTab {
 
     float labelScale;
 
+
     public FixedBottomNavigationTab(Context context) {
         super(context);
     }

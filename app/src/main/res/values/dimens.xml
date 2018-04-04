@@ -5,5 +5,4 @@
     <dimen name="action_bar_height_large">64dp</dimen>
     <dimen name="action_bar_elevation">3dp</dimen>
     <dimen name="tab_height">48dp</dimen>
-    <dimen name="tab_text_size">14sp</dimen>
 </resources>
