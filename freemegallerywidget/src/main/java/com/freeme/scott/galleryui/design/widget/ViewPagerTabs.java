@@ -163,7 +163,7 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
                     tabTitle.toString(),
                     mUnreadCounts[position]));
       } else {
-        textView.setVisibility(View.INVISIBLE);
+//        textView.setVisibility(View.INVISIBLE);
 //        iconView.setContentDescription(getResources().getString(R.string.tab_title, tabTitle));
       }
       tabView = layout;
