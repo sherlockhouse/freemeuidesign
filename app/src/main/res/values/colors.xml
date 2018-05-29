@@ -40,4 +40,5 @@
     <color name="freeme_blue_grey_800">#ff37474f</color>
     <color name="freeme_blue_grey_900">#ff263238</color>
     <color name="freeme_blue_grey_950">#ff21272b</color>
+    <color name="transparent">#00000000</color>
 </resources>

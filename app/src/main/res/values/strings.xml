@@ -5,4 +5,10 @@
 	<string name="app_name">Dynamic Fragment Demo</string>
 	<string name="other">I am the other activity!</string>
 	<string name="test">test</string>
+    <string name="edit">编辑</string>
+	<string name="share">分享</string>
+	<string name="delete">删除</string>
+	<string name="set_as">设置为</string>
+	<string name="blockbuster">大片</string>
+	<string name="tags">标签</string>
 </resources>

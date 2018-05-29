@@ -15,11 +15,14 @@
 package com.commonsware.android.dfrag;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.TextView;
 
+import com.freeme.scott.galleryui.design.BottomNavigationBar;
+import com.freeme.scott.galleryui.design.BottomNavigationItem;
 import com.freeme.scott.galleryui.design.adapter.GalleryPageAdapter;
 import com.freeme.scott.galleryui.design.widget.FreemeBottomSelectedController;
 import com.freeme.scott.galleryui.design.widget.FreemeBottomSelectedView;
@@ -44,19 +47,27 @@ public class DynamicFragmentsDemoActivity extends
     private static final int TAP_TEST = 0;
     private static final int BAR_TEST = 1;
     private static final int ACTIONMODE_TEST = 2;
+    private static final int BOTTOM_NAV_TEST = 3;
     private FreemeBottomSelectedController mBottomSelectedController;
 
     private static final int ACTION_CODE_SHARE = 0x100;
     private static final int ACTION_CODE_DELETE = 0x200;
     private static final int[] mActionNames = new int[]{R.string.test,R.string.test};
     private static final int[] mActionCodes = new int[]{ACTION_CODE_SHARE, ACTION_CODE_DELETE};
+    private BottomNavigationBar bottomNavigationBar;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int test = TAP_TEST;
+        int test = BOTTOM_NAV_TEST;
         switch(test) {
+            case BOTTOM_NAV_TEST:
+                setContentView(R.layout.bottom_navigationbar);
+
+                bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.photopage_bottom_navigation_bar);
+                refresh();
+                break;
             case TAP_TEST:
                 setContentView(R.layout.main);
                 String[] tabTitles = new String[TAB_COUNT_DEFAULT];
@@ -145,4 +156,18 @@ public class DynamicFragmentsDemoActivity extends
             }
         }
     };
+
+    private void refresh() {
+
+        bottomNavigationBar
+                .addItem(new BottomNavigationItem(R.drawable.ic_menu_photo_edit, R.string.edit).setActiveColorResource(R.color.transparent))
+                .addItem(new BottomNavigationItem(R.drawable.ic_menu_photo_share, R.string.share).setActiveColorResource(R.color.transparent))
+                .addItem(new BottomNavigationItem(R.drawable.ic_menu_photo_delete, R.string.delete).setActiveColorResource(R.color.transparent))
+                .addItem(new BottomNavigationItem(R.drawable.ic_menu_photo_setas, R.string.set_as).setActiveColorResource(R.color.transparent))
+                .addItem(new BottomNavigationItem(R.drawable.ic_menu_photo_film, R.string.blockbuster).setActiveColorResource(R.color.transparent))
+                .addItem(new BottomNavigationItem(R.drawable.ic_menu_photo_tag, R.string.tags).setActiveColorResource(R.color.transparent))
+                .setMode(BottomNavigationBar.MODE_FIXED)
+                .initialise();
+    }
+
 }
