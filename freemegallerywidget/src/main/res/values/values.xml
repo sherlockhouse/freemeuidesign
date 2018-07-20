@@ -30,7 +30,7 @@
     <dimen name="bottom_navigation_padded_height">64dp</dimen>
     <dimen name="bottom_navigation_top_margin_correction">-8dp</dimen>
     <dimen name="fixed_height">56dp</dimen>
-    <dimen name="fixed_height_bottom_padding">10dp</dimen>
+    <dimen name="fixed_height_bottom_padding">6dp</dimen>
     <dimen name="fixed_height_top_padding_active">0dp
     </dimen>
     <dimen name="fixed_height_top_padding_inactive">2dp
