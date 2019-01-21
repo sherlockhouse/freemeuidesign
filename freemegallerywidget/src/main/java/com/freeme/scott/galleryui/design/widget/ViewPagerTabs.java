@@ -77,6 +77,15 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
   ViewPager mPager;
   int mPrevSelected = -1;
   int mSidePadding;
+
+  public ViewPagerTabStrip getmTabStrip() {
+    return mTabStrip;
+  }
+
+  public void setmTabStrip(ViewPagerTabStrip mTabStrip) {
+    this.mTabStrip = mTabStrip;
+  }
+
   private ViewPagerTabStrip mTabStrip;
   private int[] mTabIcons;
   // For displaying the unread count next to the tab icon.
@@ -149,12 +158,13 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
     if (mTabIcons != null && position < mTabIcons.length) {
       View layout = LayoutInflater.from(getContext()).inflate(R.layout.unread_count_tab, null);
       View iconView = layout.findViewById(R.id.icon);
+      TextView iconText = layout.findViewById(R.id.icon_text);
+      iconText.setText(tabTitle);
+      setTextStyle(iconText);
+
       iconView.setBackgroundResource(mTabIcons[position]);
       iconView.setContentDescription(tabTitle);
-      TextView textView = (TextView) layout.findViewById(R.id.count);
       if (mUnreadCounts != null && mUnreadCounts[position] > 0) {
-        textView.setText(Integer.toString(mUnreadCounts[position]));
-        textView.setVisibility(View.VISIBLE);
         iconView.setContentDescription(
             getResources()
                 .getQuantityString(
@@ -162,9 +172,6 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
                     mUnreadCounts[position],
                     tabTitle.toString(),
                     mUnreadCounts[position]));
-      } else {
-//        textView.setVisibility(View.INVISIBLE);
-//        iconView.setContentDescription(getResources().getString(R.string.tab_title, tabTitle));
       }
       tabView = layout;
     } else {
@@ -175,21 +182,7 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
       //*/
 
       // Assign various text appearance related attributes to child views.
-      if (mTextStyle > 0) {
-        textView.setTypeface(textView.getTypeface(), mTextStyle);
-      }
-      if (mTextSize > 0) {
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
-      }
-
-       textView.setBackgroundColor(mBackgroudColor);
-
-        if (mTextColor != null) {
-        textView.setTextColor(mTextColor);
-
-      }
-      textView.setAllCaps(mTextAllCaps);
-      textView.setGravity(Gravity.CENTER);
+      setTextStyle(textView);
 
       tabView = textView;
     }
@@ -223,6 +216,24 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
       tabView.setSelected(true);
     }
     //*/
+  }
+
+  private void setTextStyle(TextView textView) {
+    if (mTextStyle > 0) {
+      textView.setTypeface(textView.getTypeface(), mTextStyle);
+    }
+    if (mTextSize > 0) {
+      textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
+    }
+
+    textView.setBackgroundColor(mBackgroudColor);
+
+    if (mTextColor != null) {
+    textView.setTextColor(mTextColor);
+
+  }
+    textView.setAllCaps(mTextAllCaps);
+    textView.setGravity(Gravity.CENTER);
   }
 
   /**

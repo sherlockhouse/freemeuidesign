@@ -13,31 +13,24 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background="@drawable/view_pager_tab_background">
-  <!-- The tab icon -->
-  <ImageView
-    android:id="@+id/icon"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"/>
-  <TextView
-    android:id="@+id/count"
-    android:layout_width="wrap_content"
-    android:layout_height="@dimen/tab_unread_count_background_size"
-    android:layout_marginTop="@dimen/tab_unread_count_margin_top"
-    android:layout_marginStart="@dimen/tab_unread_count_margin_left"
-    android:layout_toEndOf="@id/icon"
-    android:paddingLeft="@dimen/tab_unread_count_text_padding"
-    android:paddingRight="@dimen/tab_unread_count_text_padding"
-    android:background="@drawable/unread_count_background"
-    android:fontFamily="sans-serif-medium"
-    android:gravity="center"
-    android:importantForAccessibility="no"
-    android:minWidth="@dimen/tab_unread_count_background_size"
-    android:textAlignment="center"
-    android:textColor="@color/tab_accent_color"
-    android:textSize="@dimen/tab_unread_count_text_size"/>
-</RelativeLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="50dp"
+              android:layout_centerVertical="true"
+              android:gravity="center"
+              android:layout_marginBottom="6dp"
+              android:layout_marginTop="9dp"
+              android:orientation="vertical">
+              <!--android:background="@drawable/view_pager_tab_background">-->
+    <!-- The tab icon -->
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/icon_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/freeme_home_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="9dip"
+    android:layout_gravity="center_vertical|start">
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/freeme_actionbar_back_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?android:actionMenuTextColor"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:paddingStart="16dp"
+        android:text="lsdfjl;"
+        android:textSize="18sp"
+        android:layout_gravity="center_vertical|start" />
+</LinearLayout>

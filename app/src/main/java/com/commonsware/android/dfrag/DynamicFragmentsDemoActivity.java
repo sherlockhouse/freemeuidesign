@@ -47,6 +47,7 @@ public class DynamicFragmentsDemoActivity extends
     private static final int BAR_TEST = 1;
     private static final int ACTIONMODE_TEST = 2;
     private static final int BOTTOM_NAV_TEST = 3;
+    private static final int ALBUM_BAR_TEST = 4;
     private FreemeBottomSelectedController mBottomSelectedController;
 
     private static final int ACTION_CODE_SHARE = 0x100;
@@ -71,7 +72,7 @@ public class DynamicFragmentsDemoActivity extends
 //        params.flags |= WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS;
 //        win.setAttributes(params);
 
-        int test = BOTTOM_NAV_TEST;
+        int test = ALBUM_BAR_TEST;
         switch (test) {
             case BOTTOM_NAV_TEST:
                 setContentView(R.layout.bottom_navigationbar);
@@ -83,16 +84,17 @@ public class DynamicFragmentsDemoActivity extends
                 setContentView(R.layout.main);
                 String[] tabTitles = new String[TAB_COUNT_DEFAULT];
                 tabTitles[TAB_INDEX_SPEED_DIAL] = "相册";
-                tabTitles[TAB_INDEX_HISTORY] = "联系人";
-                tabTitles[TAB_INDEX_ALL_CONTACTS] = "test3";
+                tabTitles[TAB_INDEX_HISTORY] = "照片";
+                tabTitles[TAB_INDEX_ALL_CONTACTS] = "发现";
                 mViewPager = findViewById(R.id.lists_pager);
                 mAdapter = new GalleryPageAdapter(tabTitles);
                 mViewPager.setAdapter(mAdapter);
                 mViewPager.addOnPageChangeListener(this);
                 mViewPagerTabs = findViewById(R.id.lists_pager_header);
-        /*
-        mViewPagerTabs.configureTabIcons(tabIcons);
-        */
+                int[] icons = {R.drawable.ic_pic, R.drawable.ic_albums, R.drawable.ic_discover};
+                mViewPagerTabs.configureTabIcons(icons);
+//                mViewPagerTabs.getmTabStrip().setmSelectedUnderlineThickness( getResources().getDimensionPixelSize(R.dimen.tab_selected_underline_height));
+
                 mViewPagerTabs.setViewPager(mViewPager);
                 addOnPageChangeListener(mViewPagerTabs);
                 break;
@@ -113,6 +115,13 @@ public class DynamicFragmentsDemoActivity extends
                 } else {
                     controller.hideActions();
                 }
+                break;
+            case ALBUM_BAR_TEST:
+                setContentView(R.layout.ablum_bartest);
+                TextView back = findViewById(R.id.freeme_actionbar_back_title);
+                back.setText("相册");
+                TextView menu = findViewById(R.id.freeme_actionbar_menuview_text1);
+                menu.setText("编辑");
                 break;
             default:
                 break;

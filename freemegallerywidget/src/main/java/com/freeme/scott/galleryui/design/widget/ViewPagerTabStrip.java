@@ -29,6 +29,15 @@ import com.freeme.scott.galleryui.design.R;
 public class ViewPagerTabStrip extends LinearLayout {
 
   private final Paint mSelectedUnderlinePaint;
+
+  public int getmSelectedUnderlineThickness() {
+    return mSelectedUnderlineThickness;
+  }
+
+  public void setmSelectedUnderlineThickness(int mSelectedUnderlineThickness) {
+    this.mSelectedUnderlineThickness = mSelectedUnderlineThickness;
+  }
+
   private int mSelectedUnderlineThickness;
   private int mIndexForSelection;
   private float mSelectionOffset;
@@ -42,7 +51,7 @@ public class ViewPagerTabStrip extends LinearLayout {
 
     final Resources res = context.getResources();
 
-    mSelectedUnderlineThickness = res.getDimensionPixelSize(R.dimen.tab_selected_underline_height);
+//    mSelectedUnderlineThickness = res.getDimensionPixelSize(R.dimen.tab_selected_underline_height);
     /*/ freeme.zhaozehong, 20180130. for freemeOS, UI redesign
     int underlineColor = res.getColor(R.color.tab_selected_underline_color);
     int backgroundColor = res.getColor(R.color.contactscommon_actionbar_background_color);

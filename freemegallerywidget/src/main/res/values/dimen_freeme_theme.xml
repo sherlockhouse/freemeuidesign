@@ -7,7 +7,7 @@
     <dimen name="actionbar_title_max_width_freeme">176dip</dimen>
     <dimen name="actionbar_subtitle_size_freeme">12dip</dimen>
     <dimen name="actionbar_subtitle_margin_bottom_freeme">7dip</dimen>
-    <dimen name="actionbar_menuview_size_freeme">15dip</dimen>
+    <dimen name="actionbar_menuview_size_freeme">15sp</dimen>
     <dimen name="actionbar_menuitemview_item_spacing_freeme">14dip</dimen>
     <dimen name="actionbar_menuview_padding_freeme">14dip</dimen>
     <dimen name="actionbar_menuview_padding_vertical_freeme">0dip</dimen>
