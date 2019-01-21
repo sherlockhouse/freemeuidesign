@@ -15,7 +15,6 @@
 package com.commonsware.android.dfrag;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -60,8 +59,20 @@ public class DynamicFragmentsDemoActivity extends
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        final Window win = getWindow();
+//
+//        win.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+//                | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+//
+//        win.setStatusBarColor(getResources().getColor(R.color.theme_title_color));
+//        final WindowManager.LayoutParams params = win.getAttributes();
+//
+//        params.flags &= ~WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION;
+//        params.flags |= WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS;
+//        win.setAttributes(params);
+
         int test = BOTTOM_NAV_TEST;
-        switch(test) {
+        switch (test) {
             case BOTTOM_NAV_TEST:
                 setContentView(R.layout.bottom_navigationbar);
 
